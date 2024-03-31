@@ -49,7 +49,7 @@ class EmrController extends Controller
             $emr->save();
                 return response()->json([
                     "message" => "Record Updated"
-                ], 404);
+                ], 201);
         } else {
             return response() -> json ([
                 "message" => "Record not found"

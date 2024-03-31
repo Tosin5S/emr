@@ -15,12 +15,12 @@ use App\Http\Controllers\EmrController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::get('/emr',[EmrController::class, 'index']);
 Route::get('/emr/{id}',[EmrController::class, 'show']);
-Route::get('/emr',[EmrController::class, 'store']);
-Route::get('/emr/{id}',[EmrController::class, 'update']);
-Route::get('/emr/{id}',[EmrController::class, 'destroy']);
+Route::post('/emr',[EmrController::class, 'store']);
+Route::put('/emr/{id}',[EmrController::class, 'update']);
+Route::delete('/emr/{id}',[EmrController::class, 'destroy']);
