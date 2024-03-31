@@ -44,7 +44,7 @@ class EmrController extends Controller
     {
         if (EMR::where('id', $id) -> exists()) {
             $emr = EMR::find($id);
-            $emr->name = is_null(request->name) ? $book->name : $request->name;
+            $emr->name = is_null($request->name) ? $book->name : $request->name;
             $emr->position = is_null($request->position) ? $emr->position : $request->position;
             $emr->save();
                 return response()->json([
