@@ -19,15 +19,15 @@ return new class extends Migration
             $table->string('address');
             $table->string('phone_number');
             $table->string('email');
-            $table->int('matric_number');
+            $table->integer('matric_number');
             $table->string('faculty');
             $table->string('department');
             $table->string('state_of_origin');
             $table->string('country');
             $table->string('blood_group');
             $table->string('genotype');
-            $table->int('height');
-            $table->int('weight');
+            $table->integer('height');
+            $table->integer('weight');
             $table->timestamps();
         });
     }

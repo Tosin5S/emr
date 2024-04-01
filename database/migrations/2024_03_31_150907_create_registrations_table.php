@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('registrations', function (Blueprint $table) {
             $table->id();
             $table->date('registration_date');
-            $table->int('registrar_id');
-            $table->int('patient_id');
+            $table->integer('registrar_id');
+            $table->integer('patient_id');
             $table->timestamps();
         });
     }

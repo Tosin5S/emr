@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('phone_number');
             $table->string('email');
             $table->string('license_number');
-            $table->sting('marital_status');
+            $table->string('marital_status');
             $table->string('state_of_origin');
             $table->string('country');
             $table->string('next_of_kin_name');

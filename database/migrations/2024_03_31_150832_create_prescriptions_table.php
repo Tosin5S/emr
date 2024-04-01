@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
             $table->string('prescription_name');
-            $table->int('prescription_dosage');
+            $table->integer('prescription_dosage');
             $table->date('start_date');
             $table->date('end_date');
-            $table->int('patient_id');
-            $table->int('doctor_id');
+            $table->integer('patient_id');
+            $table->integer('doctor_id');
             $table->timestamps();
         });
     }

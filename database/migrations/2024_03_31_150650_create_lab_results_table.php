@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('result');
             $table->date('date_released');
-            $table->int('patient_id');
-            $table->int('doctor_id');
-            $table->int('lab_tech_id');
+            $table->integer('patient_id');
+            $table->integer('doctor_id');
+            $table->integer('lab_tech_id');
             $table->timestamps();
         });
     }
