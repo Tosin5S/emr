@@ -34,8 +34,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/auth/register', [AuthController::class, 'createUser']);
-Route::post('/auth/login', [AuthController::class, 'loginUser']);
+// Public routes of authtication
+Route::controller(AuthController::class)->group(function() {
+    Route::post('/register', 'createUser');
+    Route::post('/login', 'loginUser');
+});
+
+Route::middleware('auth:sanctum')->group( function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+});
+
+#Route::post('/auth/register', [AuthController::class, 'createUser']);
+#Route::post('/auth/login', [AuthController::class, 'loginUser']);
 
 # diagnosis
 Route::get('/diagnosis',[DiagnosisController::class, 'index']);
